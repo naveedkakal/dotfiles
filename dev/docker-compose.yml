@@ -1,0 +1,71 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:9.3.12
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    container_name: postgres
+
+  elasticsearch:
+    image: elasticsearch:1.7
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    expose:
+      - "9200"
+      - "9300"
+    container_name: elasticsearch
+
+  logstash:
+    image: logstash:2.1
+    container_name: logstash
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./logstash_conf:/config-dir/
+    command: -f /config-dir/logstash.conf
+    links:
+      - elasticsearch:elasticsearch
+
+  kibana:
+    image: kibana:4.1
+    container_name: kibana
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    links:
+      - elasticsearch:elasticsearch
+    ports:
+      - "5601:5601"
+
+  redis:
+    image: redis:2.8
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    container_name: rabbitmq
+    hostname: dev-rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    links:
+      - influxdb:influxdb
