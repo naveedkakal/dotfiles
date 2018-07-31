@@ -34,3 +34,5 @@ BULLETTRAIN_PROMPT_ORDER=(
 	# hg
 	cmd_exec_time
 )
+
+BULLETTRAIN_PROMPT_CHAR='$ '

@@ -21,15 +21,16 @@ fi
 
 # Useful aliases
 alias rb='git for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='\''%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'\'
+
+# Rails Aliases
 alias be="bundle exec"
 alias ber="bundle exec rspec"
+alias tdbr="RAILS_ENV=test rake db:reset"
+
+alias realfeel="curl -s -N http://wttr.in/CHI"
 
 # Sets the editor as sublime text
 export EDITOR='vim'
-
-
-# Set any local configs needed in a local .zshrc.local
-[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
 # User configuration
 # DEFAULT_USER=naveed
@@ -58,5 +59,14 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dump_local="mysqldump railpro_development > ~/dev/dumps/local_develop.sql"
+alias gcd="git checkout develop"
+alias gcm="git checkout master"
+alias jobnum="echo 'SELECT * FROM system_settings' | mysql railpro_development"
+alias jug="jruby -S juggernaut -c config/juggernaut.yml"
+
+# TODO: run /usr/local/opt/fzf/install during install script stuff
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH=$PATH:/usr/local/sbin
