@@ -1,0 +1,156 @@
+# ============================================================================
+# Starship Prompt Configuration - Powerlevel10k Rainbow Style
+# https://starship.rs/config/
+# ============================================================================
+
+# Timeout for commands (in milliseconds)
+command_timeout = 1000
+
+# Format string (defines order and content)
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$ruby\
+$elixir\
+$python\
+$docker_context\
+$cmd_duration\
+$line_break\
+$character"""
+
+# ============================================================================
+# Prompt Character
+# ============================================================================
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# ============================================================================
+# OS Icon
+# ============================================================================
+
+[os]
+disabled = false
+format = "[ $symbol](bg:#9A348E fg:bold white)"
+
+[os.symbols]
+Macos = ""
+
+# ============================================================================
+# Username
+# ============================================================================
+
+[username]
+show_always = false
+style_user = "bg:#DA627D fg:bold white"
+style_root = "bg:#DA627D fg:bold red"
+format = "[$user ]($style)"
+
+# ============================================================================
+# Hostname
+# ============================================================================
+
+[hostname]
+ssh_only = true
+style = "bg:#DA627D fg:bold white"
+format = "[@$hostname ]($style)"
+
+# ============================================================================
+# Directory
+# ============================================================================
+
+[directory]
+style = "bg:#FCA17D fg:bold #1a1a1a"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+# ============================================================================
+# Git Branch
+# ============================================================================
+
+[git_branch]
+symbol = " "
+style = "bg:#86BBD8 fg:bold #1a1a1a"
+format = "[ $symbol$branch ]($style)"
+truncation_length = 25
+
+# ============================================================================
+# Git Status
+# ============================================================================
+
+[git_status]
+style = "bg:#86BBD8 fg:bold #1a1a1a"
+format = "[$all_status$ahead_behind ]($style)"
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+conflicted = "=${count} "
+deleted = "✘${count} "
+renamed = "»${count} "
+modified = "!${count} "
+staged = "+${count} "
+untracked = "?${count} "
+stashed = "📦${count} "
+
+# ============================================================================
+# Command Duration
+# ============================================================================
+
+[cmd_duration]
+min_time = 1000
+style = "bg:#33658A fg:bold white"
+format = "[  $duration ]($style)"
+
+# ============================================================================
+# Language/Tool Versions (shown when relevant)
+# ============================================================================
+
+[nodejs]
+symbol = " "
+style = "bg:#33A34A fg:bold white"
+format = "[ $symbol$version ]($style)"
+detect_extensions = ["js", "mjs", "cjs", "ts", "tsx"]
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[ruby]
+symbol = " "
+style = "bg:#CC342D fg:bold white"
+format = "[ $symbol$version ]($style)"
+detect_extensions = ["rb"]
+detect_files = ["Gemfile", ".ruby-version"]
+
+[elixir]
+symbol = " "
+style = "bg:#4B275F fg:bold white"
+format = "[ $symbol$version ]($style)"
+detect_extensions = ["ex", "exs"]
+detect_files = ["mix.exs"]
+
+[python]
+symbol = " "
+style = "bg:#FFD43B fg:bold #1a1a1a"
+format = "[ $symbol$version ]($style)"
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "Pipfile"]
+
+[docker_context]
+symbol = " "
+style = "bg:#0db7ed fg:bold white"
+format = "[ $symbol$context ]($style)"
+detect_files = ["docker-compose.yml", "Dockerfile"]

@@ -1,0 +1,62 @@
+# ============================================================================
+# Global Git Ignore
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Secrets (NEVER commit these!)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+secrets.yaml
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+
+# Misc
+*.log
+.cache/
+.temp/
+tmp/
+.claude/
