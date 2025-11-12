@@ -50,8 +50,9 @@ export PATH="/Users/naveedkakal/.codeium/windsurf/bin:$PATH"
 # fzf - fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# autojump - smart directory jumping
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+# zoxide - smarter directory jumping
+# Uses 'j' command just like autojump
+eval "$(zoxide init zsh --cmd j)"
 
 # nvm - Node version manager
 export NVM_DIR="$HOME/.nvm"

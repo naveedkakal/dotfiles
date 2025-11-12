@@ -46,11 +46,26 @@ alias realfeel="curl -s -N http://wttr.in/CHICAGO"
 # General Aliases
 # ============================================================================
 
-# Better ls (with hidden files)
-alias ls='ls -GA'
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -ACF'
+# Better ls with eza (modern ls replacement)
+if command -v eza &> /dev/null; then
+  alias ls='eza --icons --git'
+  alias ll='eza --icons --git -lah'
+  alias la='eza --icons --git -a'
+  alias l='eza --icons --git'
+  alias lt='eza --icons --git --tree --level=2'
+else
+  # Fallback to regular ls if eza not installed
+  alias ls='ls -GA'
+  alias ll='ls -lah'
+  alias la='ls -A'
+  alias l='ls -ACF'
+fi
+
+# Better cat with bat
+if command -v bat &> /dev/null; then
+  alias cat='bat --style=auto'
+  alias catt='/bin/cat'  # Use original cat if needed
+fi
 
 # Quick navigation
 alias ..='cd ..'

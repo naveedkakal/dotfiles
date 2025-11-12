@@ -56,8 +56,11 @@ TOOLS=(
   "wezterm"
   "starship"
   "fzf"
-  "autojump"
   "neovim"
+  "eza"
+  "bat"
+  "git-delta"
+  "zoxide"
 )
 
 for tool in "${TOOLS[@]}"; do

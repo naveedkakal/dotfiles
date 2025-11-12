@@ -10,6 +10,7 @@
 	editor = nvim
 	autocrlf = input
 	excludesfile = ~/.config/git/.gitignore_global
+	pager = delta
 
 [init]
 	defaultBranch = main
@@ -29,6 +30,16 @@
 
 [merge]
 	conflictstyle = diff3
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
+	side-by-side = false
+	syntax-theme = base16
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
