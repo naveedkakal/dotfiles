@@ -38,6 +38,7 @@ echo ""
 echo "📁 Creating directories..."
 mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin}
 mkdir -p "$HOME/.local/share"
+mkdir -p "$HOME/Library/Application Support/Code/User"
 
 # ============================================================================
 # Install Homebrew packages
@@ -127,6 +128,20 @@ if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
   mv "$CONFIG_DIR/nvim" "$CONFIG_DIR/nvim.backup.$(date +%Y%m%d_%H%M%S)"
 fi
 ln -sfn "$DOTFILES_DIR/.config/nvim" "$CONFIG_DIR/nvim"
+
+# VS Code
+VSCODE_USER="$HOME/Library/Application Support/Code/User"
+if [ -f "$VSCODE_USER/settings.json" ] && [ ! -L "$VSCODE_USER/settings.json" ]; then
+  echo "  Backing up existing VS Code settings..."
+  mv "$VSCODE_USER/settings.json" "$VSCODE_USER/settings.json.backup.$(date +%Y%m%d_%H%M%S)"
+fi
+ln -sf "$DOTFILES_DIR/.config/vscode/settings.json" "$VSCODE_USER/settings.json"
+
+if [ -f "$VSCODE_USER/keybindings.json" ] && [ ! -L "$VSCODE_USER/keybindings.json" ]; then
+  echo "  Backing up existing VS Code keybindings..."
+  mv "$VSCODE_USER/keybindings.json" "$VSCODE_USER/keybindings.json.backup.$(date +%Y%m%d_%H%M%S)"
+fi
+ln -sf "$DOTFILES_DIR/.config/vscode/keybindings.json" "$VSCODE_USER/keybindings.json"
 
 # ============================================================================
 # Setup fzf key bindings

@@ -1,0 +1,69 @@
+{
+  // ============================================================================
+  // Editor - Core Settings
+  // ============================================================================
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "on",
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  // ============================================================================
+  // Files - Clean & Consistent
+  // ============================================================================
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  // ============================================================================
+  // Workbench - Clean UI
+  // ============================================================================
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "vs-seti",
+  "window.commandCenter": false,
+  // ============================================================================
+  // Terminal - Use your shell config
+  // ============================================================================
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 13,
+  // ============================================================================
+  // Explorer
+  // ============================================================================
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // ============================================================================
+  // Security
+  // ============================================================================
+  "security.workspace.trust.enabled": true,
+  // ============================================================================
+  // Language-Specific Formatters (Add as needed)
+  // ============================================================================
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+    "editor.wordWrap": "on"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true
+}
