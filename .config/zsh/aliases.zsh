@@ -23,6 +23,8 @@ alias gsta='git stash'
 alias gstp='git stash pop'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
+alias ggpull='git pull origin $(git branch --show-current)'
+alias ggpush='git push origin $(git branch --show-current)'
 
 # Custom git branch viewer (from your old config)
 alias rb='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='\''%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'\'
