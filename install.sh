@@ -28,6 +28,7 @@ backup_file() {
 backup_file "$HOME/.zshrc"
 backup_file "$HOME/.zshenv"
 backup_file "$HOME/.gitconfig"
+backup_file "$HOME/.aerospace.toml"
 
 # ============================================================================
 # Create necessary directories
@@ -110,6 +111,7 @@ echo "🔗 Creating symlinks..."
 ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv"
 ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIR/.aerospace.toml" "$HOME/.aerospace.toml"
 
 # .config directory files
 ln -sf "$DOTFILES_DIR/.config/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"

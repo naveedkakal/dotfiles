@@ -49,6 +49,7 @@ dotfiles/
 ├── .zshrc                   # Main zsh config
 ├── .zshenv                  # Environment variables
 ├── .gitconfig               # Git configuration
+├── .aerospace.toml          # AeroSpace window manager config
 ├── install.sh               # Symlink installer
 └── README.md
 ```
