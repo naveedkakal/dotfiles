@@ -72,6 +72,33 @@ config.mouse_bindings = {
 -- ============================================================================
 
 config.keys = {
+  -- Word and line navigation (macOS style)
+  {
+    key = 'LeftArrow',
+    mods = 'OPT',
+    action = wezterm.action.SendKey { key = 'b', mods = 'ALT' },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'OPT',
+    action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
+  },
+  {
+    key = 'LeftArrow',
+    mods = 'CMD',
+    action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CMD',
+    action = wezterm.action.SendKey { key = 'e', mods = 'CTRL' },
+  },
+  {
+    key = 'Backspace',
+    mods = 'CMD',
+    action = wezterm.action.SendKey { key = 'u', mods = 'CTRL' },
+  },
+
   -- Splits
   {
     key = 'd',
