@@ -36,7 +36,7 @@ backup_file "$HOME/.aerospace.toml"
 
 echo ""
 echo "📁 Creating directories..."
-mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin}
+mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin,btop}
 mkdir -p "$HOME/.local/share"
 mkdir -p "$HOME/Library/Application Support/Code/User"
 
@@ -64,6 +64,7 @@ TOOLS=(
   "git-delta"
   "zoxide"
   "atuin"
+  "btop"
 )
 
 for tool in "${TOOLS[@]}"; do
@@ -121,6 +122,7 @@ ln -sf "$DOTFILES_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
 ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.lua"
 ln -sf "$DOTFILES_DIR/.config/atuin/config.toml" "$CONFIG_DIR/atuin/config.toml"
 ln -sfn "$DOTFILES_DIR/.config/atuin/themes" "$CONFIG_DIR/atuin/themes"
+ln -sf "$DOTFILES_DIR/.config/btop/btop.conf" "$CONFIG_DIR/btop/btop.conf"
 
 # Neovim - symlink entire directory
 if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
