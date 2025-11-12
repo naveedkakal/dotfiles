@@ -40,7 +40,7 @@ format = "[ $time ]($style)[](fg:#515151 bg:#6699cc)"
 
 [directory]
 style = "bg:#6699cc fg:bold #2d2d2d"
-format = "[  $path ]($style)[](fg:#6699cc bg:#99cc99)"
+format = "[  $path ]($style)[](fg:#6699cc)"
 truncation_length = 3
 truncate_to_repo = false
 truncation_symbol = "…/"
@@ -58,7 +58,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = " "
 style = "bg:#99cc99 fg:bold #2d2d2d"
-format = "[ $symbol$branch ]($style)"
+format = "[](fg:#6699cc)[ $symbol$branch ]($style)"
 truncation_length = 25
 
 # ============================================================================
