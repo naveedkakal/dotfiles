@@ -28,6 +28,7 @@ alias ggpush='git push origin $(git branch --show-current)'
 
 # Custom git branch viewer (from your old config)
 alias rb='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='\''%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'\'
+alias gcm='git checkout master'
 
 # ============================================================================
 # Rails/Ruby Aliases
