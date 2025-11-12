@@ -36,7 +36,7 @@ backup_file "$HOME/.aerospace.toml"
 
 echo ""
 echo "📁 Creating directories..."
-mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm}
+mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin}
 mkdir -p "$HOME/.local/share"
 
 # ============================================================================
@@ -118,6 +118,7 @@ ln -sf "$DOTFILES_DIR/.config/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 ln -sf "$DOTFILES_DIR/.config/git/.gitignore_global" "$CONFIG_DIR/git/.gitignore_global"
 ln -sf "$DOTFILES_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
 ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.lua"
+ln -sf "$DOTFILES_DIR/.config/atuin/config.toml" "$CONFIG_DIR/atuin/config.toml"
 
 # Neovim - symlink entire directory
 if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
