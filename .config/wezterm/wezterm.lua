@@ -25,6 +25,16 @@ config.line_height = 1.2
 
 -- Window appearance
 config.window_decorations = 'RESIZE'
+config.window_frame = {
+  border_left_width = '0.25cell',
+  border_right_width = '0.25cell',
+  border_bottom_height = '0.15cell',
+  border_top_height = '0.15cell',
+  border_left_color = '#444444',
+  border_right_color = '#444444',
+  border_bottom_color = '#444444',
+  border_top_color = '#444444',
+}
 config.window_padding = {
   left = 10,
   right = 10,
