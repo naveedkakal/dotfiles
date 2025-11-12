@@ -36,7 +36,7 @@ backup_file "$HOME/.aerospace.toml"
 
 echo ""
 echo "📁 Creating directories..."
-mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin,btop}
+mkdir -p "$CONFIG_DIR"/{zsh,git,wezterm,atuin,btop,tmux}
 mkdir -p "$HOME/.local/share"
 mkdir -p "$HOME/Library/Application Support/Code/User"
 
@@ -65,6 +65,8 @@ TOOLS=(
   "zoxide"
   "atuin"
   "btop"
+  "tmux"
+  "bash"
 )
 
 for tool in "${TOOLS[@]}"; do
@@ -123,6 +125,7 @@ ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.
 ln -sf "$DOTFILES_DIR/.config/atuin/config.toml" "$CONFIG_DIR/atuin/config.toml"
 ln -sfn "$DOTFILES_DIR/.config/atuin/themes" "$CONFIG_DIR/atuin/themes"
 ln -sf "$DOTFILES_DIR/.config/btop/btop.conf" "$CONFIG_DIR/btop/btop.conf"
+ln -sf "$DOTFILES_DIR/.config/tmux/tmux.conf" "$CONFIG_DIR/tmux/tmux.conf"
 
 # Neovim - symlink entire directory
 if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
@@ -153,6 +156,21 @@ echo ""
 echo "🔍 Setting up fzf..."
 if [ ! -f "$HOME/.fzf.zsh" ]; then
   $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+fi
+
+# ============================================================================
+# Setup tmux plugin manager (TPM)
+# ============================================================================
+
+echo ""
+echo "🔌 Setting up tmux plugin manager..."
+if [ ! -d "$CONFIG_DIR/tmux/plugins/tpm" ]; then
+  echo "  Installing TPM..."
+  git clone https://github.com/tmux-plugins/tpm "$CONFIG_DIR/tmux/plugins/tpm"
+  echo "  ✓ TPM installed"
+  echo "  💡 After starting tmux, press Ctrl+a then Shift+I to install plugins"
+else
+  echo "  ✓ TPM already installed"
 fi
 
 # ============================================================================
