@@ -68,6 +68,7 @@ if command -v bat &> /dev/null; then
 fi
 
 # Quick navigation
+alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -76,6 +77,9 @@ alias ....='cd ../../..'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+# Docker
+alias dc='docker-compose'
 
 # Misc
 alias c='clear'

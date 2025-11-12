@@ -61,6 +61,7 @@ TOOLS=(
   "bat"
   "git-delta"
   "zoxide"
+  "atuin"
 )
 
 for tool in "${TOOLS[@]}"; do

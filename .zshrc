@@ -94,6 +94,15 @@ if [ -f ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 fi
 
 # ============================================================================
+# Atuin - Better shell history
+# ============================================================================
+
+# Initialize atuin (replaces default Ctrl+R with fuzzy history search)
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
+# ============================================================================
 # Starship Prompt
 # ============================================================================
 

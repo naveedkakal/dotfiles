@@ -7,7 +7,7 @@ A clean, modern shell environment setup.
 - **WezTerm**: Modern, GPU-accelerated terminal emulator
 - **Starship**: Fast, customizable prompt
 - **Neovim**: Modern text editor based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- **Modern CLI tools**: eza (ls), bat (cat), delta (git diffs), zoxide (cd)
+- **Modern CLI tools**: eza (ls), bat (cat), delta (git diffs), zoxide (cd), atuin (history)
 - **Minimal Zsh**: No bloat, just what you need
 - **Proper secret management**: Keep credentials out of version control
 
@@ -18,7 +18,7 @@ A clean, modern shell environment setup.
 - WezTerm configuration
 - Starship prompt theme
 - Neovim configuration based on kickstart.nvim (LSP, Telescope, Treesitter, and more)
-- Modern CLI replacements: eza (ls), bat (cat), delta (git), zoxide (cd)
+- Modern CLI replacements: eza (ls), bat (cat), delta (git), zoxide (cd), atuin (history)
 - Integration with: fzf, nvm, rbenv, asdf
 
 ## Installation
