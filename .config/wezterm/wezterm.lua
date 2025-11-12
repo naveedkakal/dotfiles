@@ -19,7 +19,7 @@ end
 config.color_scheme = 'Tokyo Night'
 
 -- Font configuration
-config.font = wezterm.font('Hack Nerd Font Mono')
+config.font = wezterm.font('Hack Nerd Font Mono', { weight = 'Regular' })
 config.font_size = 15.0
 config.line_height = 1.2
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
