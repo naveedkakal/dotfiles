@@ -33,8 +33,8 @@ zstyle ':completion:*' list-colors ''
 # Environment Variables
 # ============================================================================
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Enable Elixir history
 export ERL_AFLAGS="-kernel shell_history enabled"

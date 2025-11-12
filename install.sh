@@ -57,6 +57,7 @@ TOOLS=(
   "starship"
   "fzf"
   "autojump"
+  "neovim"
 )
 
 for tool in "${TOOLS[@]}"; do
@@ -111,6 +112,13 @@ ln -sf "$DOTFILES_DIR/.config/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 ln -sf "$DOTFILES_DIR/.config/git/.gitignore_global" "$CONFIG_DIR/git/.gitignore_global"
 ln -sf "$DOTFILES_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
 ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.lua"
+
+# Neovim - symlink entire directory
+if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
+  echo "  Backing up existing nvim config..."
+  mv "$CONFIG_DIR/nvim" "$CONFIG_DIR/nvim.backup.$(date +%Y%m%d_%H%M%S)"
+fi
+ln -sfn "$DOTFILES_DIR/.config/nvim" "$CONFIG_DIR/nvim"
 
 # ============================================================================
 # Setup fzf key bindings
