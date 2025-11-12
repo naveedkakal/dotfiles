@@ -119,6 +119,7 @@ ln -sf "$DOTFILES_DIR/.config/git/.gitignore_global" "$CONFIG_DIR/git/.gitignore
 ln -sf "$DOTFILES_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
 ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.lua"
 ln -sf "$DOTFILES_DIR/.config/atuin/config.toml" "$CONFIG_DIR/atuin/config.toml"
+ln -sfn "$DOTFILES_DIR/.config/atuin/themes" "$CONFIG_DIR/atuin/themes"
 
 # Neovim - symlink entire directory
 if [ -d "$CONFIG_DIR/nvim" ] && [ ! -L "$CONFIG_DIR/nvim" ]; then
