@@ -7,6 +7,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
+$cmd_duration\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
@@ -58,3 +59,8 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bg:#212736"
+format = '[[ 󰔛 $duration ](fg:#769ff0 bg:#212736)]($style)'
