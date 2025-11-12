@@ -46,11 +46,11 @@ alias realfeel="curl -s -N http://wttr.in/CHICAGO"
 # General Aliases
 # ============================================================================
 
-# Better ls
-alias ls='ls -G'
+# Better ls (with hidden files)
+alias ls='ls -GA'
 alias ll='ls -lah'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -ACF'
 
 # Quick navigation
 alias ..='cd ..'
