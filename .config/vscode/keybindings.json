@@ -49,5 +49,14 @@
   {
     "key": "cmd+shift+]",
     "command": "workbench.action.nextEditor"
+  },
+
+  // ============================================================================
+  // Line manipulation
+  // ============================================================================
+  {
+    "key": "cmd+shift+d",
+    "command": "editor.action.duplicateSelection",
+    "when": "editorTextFocus"
   }
 ]
