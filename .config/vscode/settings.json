@@ -5,7 +5,7 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.formatOnPaste": true,
   "editor.scrollBeyondLastLine": false,
   "editor.bracketPairColorization.enabled": true,
