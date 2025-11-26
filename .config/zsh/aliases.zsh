@@ -90,3 +90,66 @@ alias c='clear'
 alias h='history'
 alias zshconfig='$EDITOR ~/.zshrc'
 alias reload='source ~/.zshrc'
+
+# ============================================================================
+# Release Management
+# ============================================================================
+
+# Retag a release with confirmation
+# Usage: retag 6.3.64
+retag() {
+  local tag="$1"
+
+  if [[ -z "$tag" ]]; then
+    echo "Usage: retag <tag>"
+    echo "Example: retag 6.3.64"
+    return 1
+  fi
+
+  # Check if we're in a git repo
+  if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+    echo "Error: Not in a git repository"
+    return 1
+  fi
+
+  # Get repo name from remote
+  local repo=$(basename -s .git $(git remote get-url origin 2>/dev/null) 2>/dev/null || basename $(pwd))
+
+  # Check if tag exists
+  if ! git rev-parse "$tag" &>/dev/null; then
+    echo "Error: Tag '$tag' does not exist"
+    return 1
+  fi
+
+  echo ""
+  echo "=== Retag Summary ==="
+  echo "Repository: \033[1;33m$repo\033[0m"
+  echo "Tag:        \033[1;33m$tag\033[0m"
+  echo "Current:    $(git rev-parse --short $tag) -> New: $(git rev-parse --short HEAD)"
+  echo ""
+  echo "=== Changes since tag ==="
+  git diff --stat "$tag"..HEAD
+  echo ""
+
+  # Confirm
+  echo -n "Proceed with force re-tagging? [y/N] "
+  read confirm
+
+  if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    echo ""
+    echo "Deleting remote tag..."
+    git push origin :"$tag"
+
+    echo "Creating new tag..."
+    git tag -f "$tag"
+
+    echo "Pushing tag..."
+    git push --tags -f
+
+    echo ""
+    echo "Done! Tag '$tag' has been updated."
+  else
+    echo "Aborted."
+    return 1
+  fi
+}
