@@ -65,5 +65,10 @@
     "editor.defaultFormatter": "vscode.markdown-language-features",
     "editor.wordWrap": "on"
   },
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "claudeCode.preferredLocation": "panel",
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.formatOnSave": false
+  }
 }
