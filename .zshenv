@@ -15,8 +15,10 @@ mkdir -p "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME"
 # Loaded here (not .zshrc) so non-interactive shells (e.g. tooling that runs
 # `zsh -c '...'`) also have nvm + the right node version on PATH.
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"          # macOS (Homebrew)
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                                     # Linux (nvm install script)
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -33,5 +35,5 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# uv
-export PATH="/Users/naveedkakal/.local/share/../bin:$PATH"
+# uv + user-local binaries (zoxide, atuin, starship on Linux install here)
+export PATH="$HOME/.local/bin:$PATH"
