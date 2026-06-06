@@ -84,50 +84,8 @@ config.cursor_blink_rate = 800
 -- Scrollback
 config.scrollback_lines = 10000
 
--- Hyperlink rules to detect file paths
-config.hyperlink_rules = wezterm.default_hyperlink_rules()
-
--- Detect file paths (matches most common patterns)
-table.insert(config.hyperlink_rules, {
-	regex = [=[["]?(\S+/[\w\d._\-/]+\.\w+)["]?]=],
-	format = "$1",
-})
-
--- Mouse
-config.mouse_bindings = {
-	-- Cmd+Click to open URLs in browser or files in VS Code
-	{
-		event = { Up = { streak = 1, button = "Left" } },
-		mods = "CMD",
-		action = wezterm.action.OpenLinkAtMouseCursor,
-	},
-}
-
--- Intercept link opening to handle files vs URLs
-wezterm.on("open-uri", function(window, pane, uri)
-	wezterm.log_info("Opening URI: " .. uri)
-
-	-- If it's a URL, let it open normally
-	if uri:match("^https?://") then
-		return true
-	end
-
-	-- Get current working directory for relative paths
-	local cwd = pane:get_current_working_dir()
-	if cwd then
-		cwd = cwd.file_path
-	end
-
-	-- If path is relative (doesn't start with /), resolve it
-	local file_path = uri
-	if cwd and not uri:match("^/") then
-		file_path = cwd .. "/" .. uri
-	end
-
-	-- Open in VS Code
-	wezterm.background_child_process({ "/opt/homebrew/bin/code", file_path })
-	return false
-end)
+-- Prevent click-to-focus from starting a selection (which freezes output)
+config.swallow_mouse_click_on_window_focus = true
 
 -- ============================================================================
 -- Key Bindings

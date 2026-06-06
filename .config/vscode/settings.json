@@ -66,9 +66,14 @@
     "editor.wordWrap": "on"
   },
   "github.copilot.nextEditSuggestions.enabled": true,
-  "claudeCode.preferredLocation": "panel",
   "[ruby]": {
     "editor.defaultFormatter": "misogi.ruby-rubocop",
     "editor.formatOnSave": false
-  }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "git.openRepositoryInParentFolders": "never"
 }

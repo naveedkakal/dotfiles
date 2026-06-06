@@ -54,10 +54,7 @@ export PATH="/Users/naveedkakal/.codeium/windsurf/bin:$PATH"
 # Uses 'j' command just like autojump
 eval "$(zoxide init zsh --cmd j)"
 
-# nvm - Node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+# nvm is sourced from ~/.zshenv so it loads in non-interactive shells too.
 
 # rbenv - Ruby version manager
 if command -v rbenv &> /dev/null; then

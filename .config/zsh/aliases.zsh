@@ -78,7 +78,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Safe operations
-alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
@@ -111,6 +110,9 @@ retag() {
     echo "Error: Not in a git repository"
     return 1
   fi
+
+  # Fetch latest tags from remote
+  git fetch --tags -f
 
   # Get repo name from remote
   local repo=$(basename -s .git $(git remote get-url origin 2>/dev/null) 2>/dev/null || basename $(pwd))
