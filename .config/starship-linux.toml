@@ -1,0 +1,73 @@
+# ============================================================================
+# Starship prompt — GREEN variant for Linux servers (e.g. nessy)
+# Mirrors starship.toml but swaps the blue accents for green, so an SSH
+# session is instantly distinguishable from the (blue) macOS prompt.
+# Selected via STARSHIP_CONFIG in .zshrc when running on Linux.
+# ============================================================================
+
+format = """
+[░▒▓](#a7d7a7)\
+[  ](bg:#a7d7a7 fg:#090c0c)\
+[](bg:#73c991 fg:#a7d7a7)\
+$directory\
+[](fg:#73c991 bg:#33503a)\
+$git_branch\
+$git_status\
+[](fg:#33503a bg:#22311f)\
+$cmd_duration\
+[](fg:#22311f bg:#1c2a1e)\
+$time\
+[ ](fg:#1c2a1e)\
+\n$character"""
+
+[directory]
+style = "fg:#e3e5e5 bg:#73c991"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#33503a"
+format = '[[ $symbol $branch ](fg:#73c991 bg:#33503a)]($style)'
+
+[git_status]
+style = "bg:#33503a"
+format = '[[($all_status$ahead_behind )](fg:#73c991 bg:#33503a)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#22311f"
+format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#22311f"
+format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#22311f"
+format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#22311f"
+format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1c2a1e"
+format = '[[  $time ](fg:#a9c9a9 bg:#1c2a1e)]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bg:#22311f"
+format = '[[ 󰔛 $duration ](fg:#73c991 bg:#22311f)]($style)'

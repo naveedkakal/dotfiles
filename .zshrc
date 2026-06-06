@@ -104,6 +104,11 @@ fi
 # ============================================================================
 
 # Initialize starship (must be at end of file)
+# On Linux, use the green-toned config so servers (e.g. nessy) are visually
+# distinct from the blue macOS prompt. macOS falls back to the default config.
+if [[ "$(uname)" == "Linux" && -f ~/.config/starship-linux.toml ]]; then
+  export STARSHIP_CONFIG="$HOME/.config/starship-linux.toml"
+fi
 if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi

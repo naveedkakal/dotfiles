@@ -253,6 +253,7 @@ ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES_DIR/.config/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 ln -sf "$DOTFILES_DIR/.config/git/.gitignore_global" "$CONFIG_DIR/git/.gitignore_global"
 ln -sf "$DOTFILES_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
+ln -sf "$DOTFILES_DIR/.config/starship-linux.toml" "$CONFIG_DIR/starship-linux.toml"  # green prompt (Linux)
 ln -sf "$DOTFILES_DIR/.config/wezterm/wezterm.lua" "$CONFIG_DIR/wezterm/wezterm.lua"
 ln -sf "$DOTFILES_DIR/.config/atuin/config.toml" "$CONFIG_DIR/atuin/config.toml"
 ln -sfn "$DOTFILES_DIR/.config/atuin/themes" "$CONFIG_DIR/atuin/themes"
