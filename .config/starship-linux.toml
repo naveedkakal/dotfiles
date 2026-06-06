@@ -1,23 +1,23 @@
 # ============================================================================
 # Starship prompt — GREEN variant for Linux servers (e.g. nessy)
-# Mirrors starship.toml but swaps the blue accents for green, so an SSH
-# session is instantly distinguishable from the (blue) macOS prompt.
+# Generated from starship.toml with only the blue accents swapped for green,
+# so the powerline glyphs stay byte-identical (rounded U+E0B4 caps preserved).
 # Selected via STARSHIP_CONFIG in .zshrc when running on Linux.
 # ============================================================================
 
 format = """
 [░▒▓](#a7d7a7)\
-[  ](bg:#a7d7a7 fg:#090c0c)\
-[](bg:#73c991 fg:#a7d7a7)\
+[  ](bg:#a7d7a7 fg:#090c0c)\
+[](bg:#73c991 fg:#a7d7a7)\
 $directory\
-[](fg:#73c991 bg:#33503a)\
+[](fg:#73c991 bg:#33503a)\
 $git_branch\
 $git_status\
-[](fg:#33503a bg:#22311f)\
+[](fg:#33503a bg:#22311f)\
 $cmd_duration\
-[](fg:#22311f bg:#1c2a1e)\
+[](fg:#22311f bg:#1c2a1e)\
 $time\
-[ ](fg:#1c2a1e)\
+[ ](fg:#1c2a1e)\
 \n$character"""
 
 [directory]
@@ -28,12 +28,12 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#33503a"
 format = '[[ $symbol $branch ](fg:#73c991 bg:#33503a)]($style)'
 
@@ -42,22 +42,22 @@ style = "bg:#33503a"
 format = '[[($all_status$ahead_behind )](fg:#73c991 bg:#33503a)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:#22311f"
 format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:#22311f"
 format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:#22311f"
 format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:#22311f"
 format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
 
@@ -65,7 +65,7 @@ format = '[[ $symbol ($version) ](fg:#73c991 bg:#22311f)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1c2a1e"
-format = '[[  $time ](fg:#a9c9a9 bg:#1c2a1e)]($style)'
+format = '[[  $time ](fg:#a9c9a9 bg:#1c2a1e)]($style)'
 
 [cmd_duration]
 min_time = 500
